@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+{% from "includes/formhelpers.html" import render_field %}
+    <h3>Makaleler</h3>
+    <hr>
+    {% if article %}
+        <h4>{{article.title}}</h4>
+        <hr>
+        Yazar: {{article.author}}
+        <hr>
+        Tarih: {{article.created_date}}
+        <hr>
+        {{article.content|safe}}
+    {% else %}
+        <div class="alert alert-warning">Böyle bir makale bulunmuyor...</div>
+    {% endif %}
+<br><br><br>
+{% if article %}
+    <form  method = "post">
+    <div class="form-group">
+        {{render_field(comment.comment,class="form-control",rows="5" )}}
+        <br>
+        <div>
+            <button type="submit" class="btn btn-danger">Yorum Yap</button>
+        </div>
+    </div>
+</form>
+{% else %}
+
+{% endif %}
+
+
+
+
+{% endblock body %}

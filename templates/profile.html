@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+{% from "includes/formhelpers.html" import render_field %}
+
+<form  method="post">
+    <div class="row">
+            <div class="col-md-3 border-right">
+                
+            </div>
+            <div class="col-md-5 border-right">
+                <div class="p-3 py-5">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 class="text-right">Profil Ayarları</h4>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-12">{{render_field(profileform.profile_name,class="form-control")}}</div>
+                        
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12">{{render_field(profileform.profile_email,class="form-control")}}</div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12">{{render_field(profileform.profile_password,class="form-control")}}</div>
+                    </div>
+                    <div class="mt-5 text-center"><button class="btn btn-danger profile-button" type="sumbit">Kaydet</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</form>
+{% endblock body %}

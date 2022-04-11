@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+    <h3>Makaleler</h3>
+    <hr>
+    <form action="/search" method = "post">
+        <input class="input-sm" name="keyword" type="text" placeholder="Ara...">
+        <button class="btn btn-danger" type="submit">Ara</button>
+    </form>
+    <hr>
+    {% if articles %}
+        {% for article in articles %}
+            <ul class="list-group">
+                <li class="list-group-item"><a href="/article/{{article.id}}">{{article.title}}</a></li>
+            </ul>
+        {% endfor %}
+    {% else %}
+    {% endif %}
+{% endblock body %}
